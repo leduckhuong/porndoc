@@ -2,28 +2,30 @@
   <q-layout ref="layout" view="hHr LpR lFf" :class="$q.dark.isActive ? '' : 'home-background'">
     <q-header>
         <q-toolbar class="bg-fixed-primary">
-            <img src="pwndoc-logo-white.png" style="max-height:50px;" />
+            <a href="/">
+              <img src="porndoc-logo-white.png" style="max-height:50px;" />
+            </a>
             
             <q-item to='/audits' active-class="text-green">
             <q-item-section avatar style="min-width:0" class="q-pr-sm">
-                <q-icon name="fa fa-fingerprint" />
+                <q-icon name="fa fa-regular fa-folder" />
             </q-item-section>
             <q-item-section>{{$t('nav.audits')}}</q-item-section>
             </q-item>
 
             <q-item to='/vulnerabilities' active-class="text-green">
             <q-item-section avatar style="min-width:0" class="q-pr-sm">
-                <q-icon name="fa fa-shield-alt" />
+                <q-icon name="fa fa-database" />
             </q-item-section>
             <q-item-section>{{$t('nav.vulnerabilities')}}</q-item-section>
             </q-item>
 
-            <q-item to='/data' active-class="text-green">
+            <!-- <q-item to='/data' active-class="text-green">
             <q-item-section avatar style="min-width:0" class="q-pr-sm">
                 <q-icon name="fa fa-database" />
             </q-item-section>
             <q-item-section>{{$t('nav.data')}}</q-item-section>
-            </q-item>
+            </q-item> -->
 
             <q-space />
 

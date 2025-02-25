@@ -3,8 +3,8 @@ export default {
     changeDisplayLanguage: 'Display Language',
     changeDisplayLanguageInfo: 'Choose your preferred default language',
     nav: {
-        audits: 'Audits',
-        vulnerabilities: 'Vulnerabilities',
+        audits: 'PM',
+        vulnerabilities: 'DM',
         data: 'Data',
     },
     btn: {

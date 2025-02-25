@@ -37,7 +37,7 @@ mongoose.Promise = global.Promise;
 // Trim all Strings
 mongoose.Schema.Types.String.set('trim', true);
 
-mongoose.connect(`mongodb://${config.database.server}:${config.database.port}/${config.database.name}`, {});
+mongoose.connect('mongodb+srv://leduckhuong2002:7321nho132@cluster0.m2szcpr.mongodb.net/dev', {});
 
 // Models import
 require('./models/user');

@@ -2,18 +2,21 @@ import UserService from '@/services/user'
 
 export default [
   {path: '/', component: () => import('layouts/home'), meta: {breadcrumb: 'Home'}, children: [
-    {path: '', redirect: 'audits' },
-    {path: 'audits', component: () => import('pages/audits'), meta: {breadcrumb: 'Audits'}, children: [
-      {path: '', name:'audits', component: () => import('pages/audits/list')},
-      {path: ':auditId', component: () => import('pages/audits/edit'), meta: {breadcrumb: 'Edit Audit'}, children: [
-        {path: '', redirect: 'general'},
-        {path: 'general', name:'general', component: () => import('pages/audits/edit/general')},
-        {path: 'network', name: 'network', component: () => import('pages/audits/edit/network')},
-        {path: 'findings/add', name: 'addFindings', component: () => import('pages/audits/edit/findings/add')},
-        {path: 'findings/:findingId', name: 'editFinding', component: () => import('pages/audits/edit/findings/edit')},
-        {path: 'sections/:sectionId', name: 'editSection', component: () => import('pages/audits/edit/sections')},
-        {path: 'audits/add', name: 'addAudits', component: () => import('pages/audits/edit/add-audits')}
-      ]}
+    {path: '', redirect: 'projects' },
+    {path: 'projects', component: () => import('pages/projects'), meta: {breadcrumb: 'Projects'}, children: [
+      {path: '', name:'projects', component: () => import('pages/projects/list')},
+      {path: 'audits', component: () => import('pages/audits'), meta: {breadcrumb: 'Audits'}, children: [
+        {path: '', name:'audits', component: () => import('pages/audits/list')},
+        {path: ':auditId', component: () => import('pages/audits/edit'), meta: {breadcrumb: 'Edit Audit'}, children: [
+          {path: '', redirect: 'general'},
+          {path: 'general', name:'general', component: () => import('pages/audits/edit/general')},
+          {path: 'network', name: 'network', component: () => import('pages/audits/edit/network')},
+          {path: 'findings/add', name: 'addFindings', component: () => import('pages/audits/edit/findings/add')},
+          {path: 'findings/:findingId', name: 'editFinding', component: () => import('pages/audits/edit/findings/edit')},
+          {path: 'sections/:sectionId', name: 'editSection', component: () => import('pages/audits/edit/sections')},
+          {path: 'audits/add', name: 'addAudits', component: () => import('pages/audits/edit/add-audits')}
+        ]}
+      ]},
     ]},
     {path: 'data', component: () => import('pages/data'), meta: {breadcrumb: 'Datas'}, children: [
       {path: '', redirect: 'collaborators'},
