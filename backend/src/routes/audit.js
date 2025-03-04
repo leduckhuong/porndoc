@@ -22,7 +22,9 @@ module.exports = function(app, io) {
             filters.$or = [{type: 'default'}, {type: {$exists:false}}]
         if (req.query.type && ['multi', 'retest'].includes(req.query.type))
             filters.type = req.query.type
-            
+
+        console.log(filters)
+
         Audit.getAudits(acl.isAllowed(req.decodedToken.role, 'audits:read-all'), req.decodedToken.id, filters)
         .then(msg => {
                 var result = []

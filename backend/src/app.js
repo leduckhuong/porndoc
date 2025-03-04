@@ -41,6 +41,9 @@ mongoose.connect('mongodb+srv://leduckhuong2002:7321nho132@cluster0.m2szcpr.mong
 
 // Models import
 require('./models/user');
+require('./models/project');
+require('./models/scope');
+require('./models/scope-type');
 require('./models/audit');
 require('./models/client');
 require('./models/company');
@@ -119,6 +122,7 @@ app.use(cookieParser())
 
 // Routes import
 require('./routes/user')(app);
+require('./routes/project')(app, io);
 require('./routes/audit')(app, io);
 require('./routes/client')(app);
 require('./routes/company')(app);

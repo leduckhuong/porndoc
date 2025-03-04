@@ -31,8 +31,14 @@ exports.jwtRefreshSecret = jwtRefreshSecret
 */
 
 var builtInRoles = {
+    // add client
     user: {
         allows: [
+            // Projects
+            'projects:create',
+            'projects:read',
+            'projects:update',
+            'projects:delete',
             // Audits
             'audits:create',
             'audits:read',
@@ -87,6 +93,8 @@ catch(error) {
     var customRoles = []
 }
 var roles = {...customRoles, ...builtInRoles}
+
+// console.log(roles);
 
 class ACL {
     constructor(roles) {

@@ -191,6 +191,19 @@ export default {
     "APPROVED_APPROVED": 9,
     "APPROVED_READONLY": 10
   },
+  PROJECT_VIEW_STATE: { 
+    "EDIT": 0, 
+    "EDIT_READONLY": 1, 
+    "REVIEW": 2, 
+    "REVIEW_EDITOR": 3, 
+    "REVIEW_APPROVED": 4, 
+    "REVIEW_ADMIN": 5, 
+    "REVIEW_ADMIN_APPROVED": 6,
+    "REVIEW_READONLY": 7,
+    "APPROVED": 8,
+    "APPROVED_APPROVED": 9,
+    "APPROVED_READONLY": 10
+  },
 
   strongPassword: function(value) {
     var regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;

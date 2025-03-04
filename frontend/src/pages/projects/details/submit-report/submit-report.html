@@ -1,0 +1,94 @@
+<div class="row q-col-gutter-md q-pa-md">
+    <div class="col-md-8 offset-md-2 col-12">
+      <q-page class="q-pa-md">
+        <q-card>
+          <q-card-section>
+            <h6 class="text-bold">Submit Vulnerability Report</h6>
+          </q-card-section>
+    
+          <!-- Section 1: Assets -->
+          <q-card-section class="section">
+            <div class="text-bold">1. Assets</div>
+            <div class="row q-col-gutter-md">
+              <q-input v-model="searchAsset" class="col-md-6 col-12" outlined label="Search" />
+              <q-input v-model="assetType" class="col-md-6 col-12" outlined label="Assets Type" readonly />
+            </div>
+            <q-list bordered class="bg-grey-3 q-mt-md">
+              <q-item>
+                <q-item-section>
+                  <q-input v-model="selectedAsset" outlined readonly />
+                </q-item-section>
+              </q-item>
+            </q-list>
+            <div class="q-mt-md">Assets count: 100</div>
+          </q-card-section>
+    
+          <!-- Section 2: Weakness -->
+          <q-card-section class="section">
+            <div class="text-bold">2. Weakness</div>
+            <div class="row q-col-gutter-md">
+              <q-input v-model="searchWeakness" class="col-md-6 col-12" outlined label="Search" />
+              <q-input v-model="weaknessType" class="col-md-6 col-12" outlined label="Weakness Type" readonly />
+            </div>
+            <q-list bordered class="bg-grey-3 q-mt-md">
+              <q-item>
+                <q-item-section>
+                  <q-input v-model="selectedWeakness" outlined readonly />
+                </q-item-section>
+              </q-item>
+            </q-list>
+            <div class="q-mt-md">Weakness count: 100</div>
+          </q-card-section>
+          <q-card-section>
+            <div class="text-bold">3. Severity</div>
+            <div class="col-md-12">
+                <cvss-calculator
+                v-model="currentVulnerability.cvssv3"
+                @cvssScoreChange="currentVulnerability.cvssScore = $event"
+                />
+            </div>
+        </q-card-section>
+          <q-card-section>
+            <h6 class="text-bold">4. Proof of Concept</h6>
+          </q-card-section>
+    
+          <!-- Title -->
+          <q-card-section>
+            <q-input v-model="title" outlined label="Title" />
+          </q-card-section>
+    
+          <!-- Chain Vulnerabilities -->
+          <q-card-section>
+            <q-checkbox v-model="chainVulnerabilities" label="Chain vulnerabilities" />
+          </q-card-section>
+    
+          <!-- Description -->
+          <q-card-section>
+            <div class="text-bold">Description</div>
+            <q-editor v-model="description" min-height="200px" />
+          </q-card-section>
+    
+          <!-- Impact -->
+          <q-card-section>
+            <div class="text-bold">Impact</div>
+            <q-editor v-model="impact" min-height="100px" />
+          </q-card-section>
+        </q-card>
+        <q-dialog v-model="showPreview">
+          <q-card style="width: 600px; max-width: 80vw;">
+            <q-card-section class="bg-grey-3">
+              <div class="text-bold">Preview</div>
+            </q-card-section>
+            <q-card-section>
+              <div v-html="previewContent"></div>
+            </q-card-section>
+            <q-card-actions align="right">
+              <q-btn flat label="Cancel" color="red" v-close-popup />
+              <q-btn flat label="Create Draft" color="blue" />
+              <q-btn flat label="Submit Report" color="green" />
+            </q-card-actions>
+          </q-card>
+        </q-dialog>
+      </q-page>
+      </div>
+    </div>

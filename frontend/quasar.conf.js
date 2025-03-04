@@ -164,27 +164,27 @@ module.exports = function (ctx) {
         theme_color: '#027be3',
         icons: [
           {
-            'src': 'favicon-pwndoc.png',
+            'src': 'favicon-porndoc.png',
             'sizes': '128x128',
             'type': 'image/png'
           },
           {
-            'src': 'favicon-pwndoc.png',
+            'src': 'favicon-porndoc.png',
             'sizes': '192x192',
             'type': 'image/png'
           },
           {
-            'src': 'favicon-pwndoc.png',
+            'src': 'favicon-porndoc.png',
             'sizes': '256x256',
             'type': 'image/png'
           },
           {
-            'src': 'favicon-pwndoc.png',
+            'src': 'favicon-porndoc.png',
             'sizes': '384x384',
             'type': 'image/png'
           },
           {
-            'src': 'favicon-pwndoc.png',
+            'src': 'favicon-porndoc.png',
             'sizes': '512x512',
             'type': 'image/png'
           }

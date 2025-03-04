@@ -1,0 +1,80 @@
+<div class="row q-col-gutter-md q-pa-md">
+    <div class="col-md-8 offset-md-2 col-12">
+      <q-card>
+        <q-card-section>
+          <div class="row q-col-gutter-md">
+            <!-- Name -->
+            <q-input
+              ref="nameField"
+              class="col-md-6 col-12"
+              v-model="project.name"
+              outlined
+              :label="$t('Name')"
+              :readonly="isReadOnly"
+            />
+
+            <!-- Languages -->
+            <q-input
+              class="col-md-6 col-12"
+              v-model="project.language"
+              outlined
+              :label="$t('Languages')"
+              readonly
+            />
+
+            <!-- Company -->
+            <q-input
+              class="col-md-6 col-12"
+              v-model="project.company"
+              outlined
+              :label="$t('Company')"
+              readonly
+            />
+
+            <!-- Client -->
+            <q-input
+              class="col-md-6 col-12"
+              v-model="project.client"
+              outlined
+              :label="$t('Client')"
+              readonly
+            />
+
+            <!-- Pentester -->
+            <div class="col-12">
+              <label class="text-bold">{{$t('Pentester')}}</label>
+              <q-option-group
+                v-model="project.pentesters"
+                :options="pentesterOptions"
+                type="checkbox"
+                inline
+                color="primary"
+                readonly
+              />
+            </div>
+
+            <!-- Description -->
+            <div class="col-12 description-container">
+              <label class="text-bold">{{$t('Description')}}</label>
+              <q-input
+                v-model="project.description"
+                outlined
+                type="textarea"
+                readonly
+                class="full-width description-input"
+              />
+            </div>
+          </div>
+        </q-card-section>
+
+        <!-- Update Button -->
+        <q-card-actions align="right">
+          <q-btn
+            :disable="isReadOnly"
+            color="primary"
+            :label="$t('Update')"
+          />
+        </q-card-actions>
+      </q-card>
+    </div>
+  </div>

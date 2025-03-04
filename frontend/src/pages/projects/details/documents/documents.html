@@ -1,0 +1,37 @@
+<div class="row q-col-gutter-md q-pa-md">
+    <div class="col-md-8 offset-md-2 col-12">
+      <div class="q-pa-md">
+        <q-card>
+          <q-table
+            flat
+            bordered
+            :data="rows"
+            :columns="columns"
+            row-key="name"
+          >
+            <!-- Hàng chứa ô tìm kiếm -->
+            <template v-slot:top>
+              <div class="row full-width bg-grey-4 q-pa-sm">
+                <q-btn label="Create Document" color="grey-6" class="q-mx-sm q-ml-auto" />
+              </div>
+              <div class="row full-width bg-grey-4 q-pa-sm">
+                <q-input v-model="search.asset" filled dense placeholder="Search" class="col q-mx-sm" />
+                <q-input v-model="search.type" filled dense placeholder="Search" class="col q-mx-sm" />
+                <q-input v-model="search.document" filled dense placeholder="Search" class="col q-mx-sm" />
+                <q-input v-model="search.lastUpdate" filled dense placeholder="Search" class="col q-mx-sm" />
+              </div>
+            </template>
+    
+            <!-- Cột thao tác -->
+            <template v-slot:body-cell-actions="props">
+              <q-td :props="props">
+                <q-btn flat label="Edit" color="grey-9" size="sm" />
+                <q-btn flat label="Delete" color="grey-9" size="sm" class="q-ml-sm" />
+              </q-td>
+            </template>
+          </q-table>
+        </q-card>
+      </div>
+    </div>
+  </div>
+  

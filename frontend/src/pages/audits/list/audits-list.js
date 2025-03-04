@@ -109,7 +109,7 @@ export default {
         },
 
          // Get Companies list
-         getCompanies: function() {
+        getCompanies: function() {
             CompanyService.getCompanies()
             .then((data) => {
                 this.companies = data.data.datas;

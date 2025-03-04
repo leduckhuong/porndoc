@@ -1,0 +1,34 @@
+<div class="row q-col-gutter-md q-pa-md">
+    <div class="col-md-8 offset-md-2 col-12">
+      <div class="q-pa-md">
+        <q-card>
+          <q-table
+            flat
+            bordered
+            :rows="rows"
+            :columns="columns"
+            row-key="asset"
+          >
+            <!-- Hàng chứa ô tìm kiếm -->
+            <template v-slot:top>
+              <div class="row full-width bg-grey-4 q-pa-sm">
+                <q-space />
+                <q-input v-model="search.scope" filled dense placeholder="Search" class="col q-mx-sm" />
+                <q-input v-model="search.lastUpdate" filled dense placeholder="Search" class="col q-mx-sm" />
+                <q-space />
+              </div>
+            </template>
+    
+            <!-- Cột chứa nút bấm -->
+            <template v-slot:body-cell-actions="props">
+              <q-td :props="props" class="q-gutter-sm">
+                <q-btn flat dense label="Preview" color="primary" size="sm" />
+                <q-btn flat dense label="Download" color="green" size="sm" />
+                <q-btn flat dense label="Delete" color="red" size="sm" />
+              </q-td>
+            </template>
+          </q-table>
+        </q-card>
+      </div>
+    </div>
+  </div>

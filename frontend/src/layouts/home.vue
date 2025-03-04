@@ -6,18 +6,18 @@
               <img src="porndoc-logo-white.png" style="max-height:50px;" />
             </a>
             
-            <q-item to='/audits' active-class="text-green">
+            <q-item to='/projects' active-class="text-green">
             <q-item-section avatar style="min-width:0" class="q-pr-sm">
                 <q-icon name="fa fa-regular fa-folder" />
             </q-item-section>
-            <q-item-section>{{$t('nav.audits')}}</q-item-section>
+            <q-item-section>{{$t('nav.projects')}}</q-item-section>
             </q-item>
 
-            <q-item to='/vulnerabilities' active-class="text-green">
+            <q-item to='/datas' active-class="text-green">
             <q-item-section avatar style="min-width:0" class="q-pr-sm">
                 <q-icon name="fa fa-database" />
             </q-item-section>
-            <q-item-section>{{$t('nav.vulnerabilities')}}</q-item-section>
+            <q-item-section>{{$t('nav.datas')}}</q-item-section>
             </q-item>
 
             <!-- <q-item to='/data' active-class="text-green">
